@@ -155,6 +155,7 @@ function timer() {
         $("#answer2").text("");
         $("#answer3").text("");
         $("#answer4").text("");
+        $("#imageDiv").append('<img class="image1 img-fluid" src="https://media.giphy.com/media/yoJC2J9ftjg7eKtMSQ/giphy.gif">')
         noAnswer++;
         pause4();
         return;
@@ -166,6 +167,7 @@ function timer() {
         $("#answer2").text("");
         $("#answer3").text("");
         $("#answer4").text("");
+        $("#imageDiv").append('<img class="image1 img-fluid" src="https://media0.giphy.com/media/gQzoxR4vrBYg8/giphy.gif">')
         noAnswer++;
         pause5();
         return;
@@ -177,6 +179,7 @@ function timer() {
         $("#answer2").text("");
         $("#answer3").text("");
         $("#answer4").text("");
+        $("#imageDiv").append('<img class="image1 img-fluid" src="https://media.giphy.com/media/K4x1ZL36xWCf6/giphy.gif">')
         noAnswer++;
         pause6();
         return;
@@ -188,6 +191,7 @@ function timer() {
         $("#answer2").text("");
         $("#answer3").text("");
         $("#answer4").text("");
+        $("#imageDiv").append('<img class="image1 img-fluid" src="https://media.giphy.com/media/OfXKySrn0Ej4s/giphy.gif">')
         noAnswer++;
         pause7();
         return;
@@ -199,6 +203,7 @@ function timer() {
         $("#answer2").text("");
         $("#answer3").text("");
         $("#answer4").text("");
+        $("#imageDiv").append('<img class="image1 img-fluid" src="https://media.giphy.com/media/3o6ZtemX3mjyCQZBEA/giphy.gif">')
         noAnswer++;
         pause8();
         return;
@@ -229,7 +234,7 @@ function stop() {
 
 //first question
 function slide1() {
-
+    
     $("#question").text(question1.q);
     $("#answer1").text(question1.a1);
     $("#answer2").text(question1.a2);
@@ -279,6 +284,7 @@ function pause1() {
 
 }
 function slide2() {
+    
     console.log("hello");
     $("#question").text(question2.q)
     $("#answer1").text(question2.a1);
@@ -330,6 +336,7 @@ function pause2() {
 }
 
 function slide3() {
+    
     $("#question").text(question3.q)
     $("#answer1").text(question3.a1);
     $("#answer2").text(question3.a2);
@@ -380,6 +387,7 @@ function pause3() {
 
 }
 function slide4() {
+   
     $("#question").text(question4.q)
     $("#answer1").text(question4.a1);
     $("#answer2").text(question4.a2);
@@ -396,6 +404,7 @@ function slide4() {
             $("#answer3").text("");
             $("#answer4").text("");
             console.log("local answers guessed: "+answersGuessed)
+            $("#imageDiv").append('<img class="image1 img-fluid" src="https://media.giphy.com/media/yoJC2J9ftjg7eKtMSQ/giphy.gif">')
         }
     })
 
@@ -426,6 +435,7 @@ function pause4() {
     answersGuessed++;
 }
 function slide5() {
+  
     $("#question").text(question5.q)
     $("#answer1").text(question5.a1);
     $("#answer2").text(question5.a2);
@@ -442,6 +452,7 @@ function slide5() {
             $("#answer3").text("");
             $("#answer4").text("");
             console.log("local answers guessed: "+answersGuessed)
+            $("#imageDiv").append('<img class="image1 img-fluid" src="https://media0.giphy.com/media/gQzoxR4vrBYg8/giphy.gif">')
         }
     })
 
@@ -472,12 +483,14 @@ function pause5() {
     answersGuessed++;
 }
 function slide6() {
+   
     $("#question").text(question6.q)
     $("#answer1").text(question6.a1);
     $("#answer2").text(question6.a2);
     $("#answer3").text(question6.a3);
     $("#answer4").text(question6.a4);
     console.log("answersGuessed: " + answersGuessed)
+    
     $(".image1").remove();
 
     $(".answer").click(function () {
@@ -487,6 +500,7 @@ function slide6() {
             $("#answer2").text("");
             $("#answer3").text("");
             $("#answer4").text("");
+            $("#imageDiv").append('<img class="image1 img-fluid" src="https://media.giphy.com/media/K4x1ZL36xWCf6/giphy.gif">')
             
         }
     })
@@ -520,6 +534,7 @@ function pause6() {
     answersGuessed++;
 }
 function slide7() {
+    
     $("#question").text(question7.q)
     $("#answer1").text(question7.a1);
     $("#answer2").text(question7.a2);
@@ -535,6 +550,7 @@ function slide7() {
             $("#answer2").text("");
             $("#answer3").text("");
             $("#answer4").text("");
+            $("#imageDiv").append('<img class="image1 img-fluid" src="https://media.giphy.com/media/OfXKySrn0Ej4s/giphy.gif">')
         }
     })
 
@@ -565,6 +581,7 @@ function pause7() {
     answersGuessed++;
 }
 function slide8() {
+   
     $("#question").text(question8.q)
     $("#answer1").text(question8.a1);
     $("#answer2").text(question8.a2);
@@ -580,6 +597,7 @@ function slide8() {
             $("#answer2").text("");
             $("#answer3").text("");
             $("#answer4").text("");
+            $("#imageDiv").append('<img class="image1 img-fluid" src="https://media.giphy.com/media/3o6ZtemX3mjyCQZBEA/giphy.gif">')
         }
     })
 
@@ -618,12 +636,15 @@ function endSlide() {
     $("#answer3").text("Unanswered: " + noAnswer);
     $("#answer4").text("Start Over?");
     $(".image1").remove();
-    $(".answer").click(function () {
+    
+    $("#answer4").click(function () {
         if (answersGuessed == 8) {
+            location.reload();
             answersGuessed = 0;
             answersRight = 0;
             noAnswer = 0;
             count = 30;
+            
             intervalId = setInterval(timer, 1000);
             slide1();
             
